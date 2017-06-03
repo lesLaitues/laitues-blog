@@ -19,10 +19,12 @@ Contents.schema = new SimpleSchema({
 	_id: {
 		type: String,
 		regEx: SimpleSchema.RegEx.Id,
+		optional: false
 	},
 	title: {
 		type: String,
 		max: 100,
+		optional: false
 	},
 	createdAt: {
 		type: Date,
@@ -34,7 +36,8 @@ Contents.schema = new SimpleSchema({
 			} else {
 				this.unset();
 			}
-		}
+		},
+		optional: false
 	},
 	updatedAt: {
 		type: Date,
@@ -44,23 +47,27 @@ Contents.schema = new SimpleSchema({
 			} else {
 				this.unset();
 			}
-		}
+		},
+		optional: false
 	},
 	authors: {
 		type: Array,
+		optional: false
 	},
 	'authors.$': {
 		type: String,
 		regEx: SimpleSchema.RegEx.Id
 	},
 	data: {
-		type: Object
+		type: Object,
+		optional: false
 	},
 	'data.text': {
 		type: String
 	},
 	tags: {
 		type: Array,
+		optional: false
 	},
 	'tags.$': {
 		type: String,
