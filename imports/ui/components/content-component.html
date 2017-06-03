@@ -1,16 +1,17 @@
 <template name="contentComponent">
 	<div class="card content">
 		<div class="card-content">
-			<span class="card-title">Card Title</span>
+			<span class="card-title">{{title}}</span>
 			<div class="tags">
-				<div class="chip">
-					Jane Doe
-				</div>
-				<div class="chip">
-					Jane Doeaiue
-				</div>
+				{{#each tags}}
+					{{#with tag}}
+						<div class="chip">
+							{{name}}
+						</div>
+					{{/with}}
+				{{/each}}
 			</div>
-			<p>Ceci est fort sympatique.</p>
+			<p>{{data.text}}</p>
 		</div>
 	</div>
 </template>

@@ -7,7 +7,8 @@ import './home-page.html';
 
 Template.homePage.onCreated(function () {
 	this.autorun(() => {
-		this.subscribe('contents', [], [], 10);
+		this.subscribe('contents', [], ["aiueaie"], 10);
+		console.log('salut');
 	});
 });
 
@@ -19,27 +20,9 @@ Template.homePage.onRendered(() => {
 });
 
 Template.homePage.helpers({
-	contents: [
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-		''
-	]
+	contents() {
+		return Contents.find({});
+	}
 });
 
 Template.homePage.events({

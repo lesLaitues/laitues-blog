@@ -37,7 +37,7 @@ Contents.schema = new SimpleSchema({
 				this.unset();
 			}
 		},
-		optional: false
+		optional: true
 	},
 	updatedAt: {
 		type: Date,
@@ -48,7 +48,7 @@ Contents.schema = new SimpleSchema({
 				this.unset();
 			}
 		},
-		optional: false
+		optional: true
 	},
 	authors: {
 		type: Array,

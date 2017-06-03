@@ -16,7 +16,7 @@
 				{{/each}}
 			</div>
 		</div>
-		<div id="right-sidebar" class="col s12 m4">
+		<div id="right-sidebar" class="col s12 m4 hide-on-small-only">
 			<div class="pushpin">
 				<div class="row">
 					<form class="col s12">
@@ -29,30 +29,11 @@
 						</div>
 					</form>
 					<div class="col s12">
-						<div class="chip">
-							Jane Doe
-						</div>
-						<div class="chip">
-							Jane Doeaiue
-						</div>
-						<div class="chip">
-							Janeoe
-						</div>
-						<div class="chip">
-							Jane Doe
-						</div>
-						<div class="chip">
-							Jane Doe
-						</div>
-						<div class="chip">
-							Jane Doe
-						</div>
-						<div class="chip">
-							Jane Doe
-						</div>
-						<div class="chip">
-							Jane Doe
-						</div>
+						{{#each tags}}
+							<div class="chip">
+								{{name}}
+							</div>
+						{{/each}}
 					</div>
 				</div>
 			</div>
