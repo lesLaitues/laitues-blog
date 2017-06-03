@@ -32,15 +32,13 @@
 						</div>
 					</form>
 					<div class="col s12">
-						{{#each otherTags}}
-							{{> tagComponent}}
-						{{/each}}
-						<hr>
 						{{#each allowedTags}}
 							{{> tagComponent}}
 						{{/each}}
-						<hr>
 						{{#each disallowedTags}}
+							{{> tagComponent}}
+						{{/each}}
+						{{#each otherTags}}
 							{{> tagComponent}}
 						{{/each}}
 					</div>
