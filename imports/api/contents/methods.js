@@ -3,11 +3,11 @@ import { Contents } from './contents.js';
 // methods on one article
 export const insert = new ValidatedMethod({
 	name: 'contents.insert',
-	validate: Contents.schema.pick(['title', 'authors', 'tags', 'text', 'answering']).validator({
+	validate: Contents.schema.pick(['title', 'authors', 'tags', 'data', 'answering']).validator({
 		clean: true,
 		filter: false
 	}),
-	run({ title, authors, tags, text, answering }) {
+	run({ title, authors, tags, data, answering }) {
 		//TODO: here check foreign keys for authors
 		//TODO: here check foreign keys for tags
 
@@ -15,7 +15,7 @@ export const insert = new ValidatedMethod({
 			title,
 			authors,
 			tags,
-			text,
+			data,
 			answering,
 			createdAt: new Date()
 		};
