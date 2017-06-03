@@ -22,24 +22,41 @@ Contents.schema = new SimpleSchema({
 	},
 	createdAt: {
 		type: Date,
-		denyUpdate: true,
-		optional: false
+		autoValue() {
+			if (this.isInsert) {
+				return new Date();
+			} else if (this.isUpsert) {
+				return { $setOnInsert: new Date() };
+			} else {
+				this.unset();
+			}
+		}
 	},
-	lastEditedAt: {
+	updatedAt: {
 		type: Date,
+		autoValue() {
+			if (this.isUpdate) {
+				return new Date();
+			}
+		},
+		denyInsert: true
 	},
 	authors: {
 		type: [String],
 		regEx: SimpleSchema.RegEx.Id,
 		optional: false
 	},
-	text: {
+	'data.text' : {
 		type: String
 	},
 	tags: {
 		type: [String],
 		regEx: SimpleSchema.RegEx.Id,
 		optional: false;
+	},
+	answering: {
+		type: String,
+		regEx: SimpleSchema.RegEx.Id
 	}
 });
 
