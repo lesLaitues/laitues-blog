@@ -19,12 +19,10 @@ Contents.schema = new SimpleSchema({
 	_id: {
 		type: String,
 		regEx: SimpleSchema.RegEx.Id,
-		optional: false
 	},
 	title: {
 		type: String,
 		max: 100,
-		optional: false
 	},
 	createdAt: {
 		type: Date,
@@ -50,7 +48,6 @@ Contents.schema = new SimpleSchema({
 	},
 	authors: {
 		type: Array,
-		optional: false
 	},
 	'authors.$': {
 		type: String,
@@ -64,7 +61,6 @@ Contents.schema = new SimpleSchema({
 	},
 	tags: {
 		type: Array,
-		optional: false
 	},
 	'tags.$': {
 		type: String,
@@ -72,7 +68,8 @@ Contents.schema = new SimpleSchema({
 	},
 	answering: {
 		type: String,
-		regEx: SimpleSchema.RegEx.Id
+		regEx: SimpleSchema.RegEx.Id,
+		optional: true
 	}
 });
 

@@ -20,17 +20,14 @@ Tags.schema = new SimpleSchema({
 	_id: {
 		type: String,
 		regEx: SimpleSchema.RegEx.Id,
-		optional: false
 	},
 	name: {
 		type: String,
 		max: 42,
-		optional: false
 	},
 	color: {
 		type: String,
 		max: 42,
-		optional: false
 	},
 	description: {
 		type: String,
