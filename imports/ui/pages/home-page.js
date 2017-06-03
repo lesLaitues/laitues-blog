@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session';
+import { _ } from 'meteor/underscore';
 
 import { Tags } from '../../api/tags/tags';
 import { Contents } from '../../api/contents/contents';
@@ -32,7 +33,23 @@ Template.homePage.helpers({
 	otherTags() {
 		return Tags.find({
 			_id: {
-				
+				$not: {
+					$in: _.union(Session.get('disallowedTags'), Session.get('allowedTags'))
+				}
+			}
+		});
+	},
+	allowedTags() {
+		return Tags.find({
+			_id: {
+				$in: Session.get('allowedTags')
+			}
+		});
+	},
+	disallowedTags() {
+		return Tags.find({
+			_id: {
+				$in: Session.get('disallowedTags')
 			}
 		});
 	}
