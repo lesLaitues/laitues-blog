@@ -1,10 +1,9 @@
-import { Tags } from './tags.js';
-import { Contents } from '../contents/contents.js';
+import { Meteor } from 'meteor/meteor';
+import { Tags } from './tags';
+import { Contents } from '../contents/contents';
 
-export const insert = new ValidatedMethod({
-	name: 'tags.insert',
-	validate: Tags.schema.pick(['name', 'color', 'description']).validator({ clean: true, filter: false }),
-	run({ name, color, description }) {
+Meteor.methods({
+	'tags.insert'({ name, color, description }) {
 		const tag = {
 			name,
 			color,
@@ -12,49 +11,29 @@ export const insert = new ValidatedMethod({
 		};
 
 		Tags.insert(tag);
-	}
-});
-
-export const rename = new ValidatedMethod({
-	name: 'tags.rename',
-	validate: Tags.schema.pick(['_id', 'name']).validator({ clean: true, filter: false }),
-	run({ tagId, newName }) {
+	},
+	'tags.rename'({ tagId, newName }) {
 		Tags.update(tagId, {
 			$set: {
 				name: newName
 			}
 		});
-	}
-});
-
-export const updateColor = new ValidatedMethod({
-	name: 'tags.updateColor',
-	validate: Tags.schema.pick(['_id', 'color']).validator({ clean: true, filter: false }),
-	run({ tagId, newColor }) {
+	},
+	'tags.updateColor'({ tagId, newColor }) {
 		Tags.update(tagId, {
 			$set: {
 				color: newColor
 			}
 		});
-	}
-});
-
-export const updateDescription = new ValidatedMethod({
-	name: 'tags.updateDescription',
-	validate: Tags.schema.pick(['_id', 'description']).validator({ clean: true, filter: false }),
-	run({ tagId, newDescription }) {
+	},
+	'tags.updateDescription'({ tagId, newDescription }) {
 		Tags.update(tagId, {
 			$set: {
 				description: newDescription
 			}
 		});
-	}
-});
-
-export const remove = new ValidatedMethod({
-	name: 'tags.remove',
-	validate: Tags.schema.pick(['_id']).validator({ clean: true, filter: false }),
-	run({ tagId }) {
+	},
+	'tags.remove'({ tagId }) {
 		//remove the tag from all contents using it
 		Contents.find({
 			tags: tagId

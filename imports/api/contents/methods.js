@@ -1,13 +1,9 @@
-import { Contents } from './contents.js';
+import { Meteor } from 'meteor/meteor';
+import { Contents } from './contents';
 
 // methods on one article
-export const insert = new ValidatedMethod({
-	name: 'contents.insert',
-	validate: Contents.schema.pick('title', 'authors', 'tags', 'data', 'answering').validator({
-		clean: true,
-		filter: false
-	}),
-	run({ title, authors, tags, data, answering }) {
+Meteor.methods({
+	'contents.insert'({ title, authors, tags, data, answering }) {
 		//TODO: here check foreign keys for authors
 		//TODO: here check foreign keys for tags
 
@@ -21,61 +17,36 @@ export const insert = new ValidatedMethod({
 		};
 
 		Contents.insert(content);
-	}
-});
-
-export const rename = new ValidatedMethod({
-	name: 'contents.rename',
-	validate: Contents.schema.pick(['_id', 'title']).validator({ clean: true, filter: false }),
-	run({ contentId, newTitle }) {
+	},
+	'contents.rename'({ contentId, newTitle }) {
 		Contents.update(contentId, {
 			$set: {
 				title: newTitle
 			}
 		});
-	}
-});
-
-export const updateData = new ValidatedMethod({
-	name: 'contents.updateData',
-	validate: Contents.schema.pick(['_id', 'data']).validator({ clean: true, filter: false }),
-	run({ contentId, newData }) {
+	},
+	'contents.updateData'({ contentId, newData }) {
 		Contents.update(contentId, {
 			$set: {
 				data: newData
 			}
 		});
-	}
-});
-
-export const addTag = new ValidatedMethod({
-	name: 'contents.addTag',
-	validate: Contents.schema.pick(['_id', 'tags']).validator({ clean: true, filter: false }),
-	run({ contentId, newTag }) {
+	},
+	'contents.addTag'({ contentId, newTag }) {
 		Contents.update(contentId, {
 			$addToSet: {
 				tags: newTag
 			}
 		});
-	}
-});
-
-export const removeTag = new ValidatedMethod({
-	name: 'contents.removeTag',
-	validate: Contents.schema.pick(['_id', 'tags']).validator({ clean: true, filter: false }),
-	run({ contentId, tag }) {
+	},
+	'contents.removeTag'({ contentId, tag }) {
 		Contents.update(contentId, {
 			$pull: {
 				tags: tag
 			}
 		});
-	}
-});
-
-export const remove = new ValidatedMethod({
-	name: 'contents.remove',
-	validate: Contents.schema.pick(['_id']).validator({ clean: true, filter: false }),
-	run({ contentId }) {
+	},
+	'contents.remove'({ contentId }) {
 		Contents.remove(contentId);
 	}
 });
