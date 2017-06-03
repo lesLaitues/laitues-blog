@@ -56,6 +56,9 @@ Contents.schema = new SimpleSchema({
 		type: String,
 		regEx: SimpleSchema.RegEx.Id
 	},
+	data: {
+		type: Object
+	},
 	'data.text': {
 		type: String
 	},

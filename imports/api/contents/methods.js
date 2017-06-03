@@ -3,7 +3,7 @@ import { Contents } from './contents.js';
 // methods on one article
 export const insert = new ValidatedMethod({
 	name: 'contents.insert',
-	validate: Contents.schema.pick(['title', 'authors', 'tags', 'data', 'answering']).validator({
+	validate: Contents.schema.pick('title', 'authors', 'tags', 'data', 'answering').validator({
 		clean: true,
 		filter: false
 	}),
