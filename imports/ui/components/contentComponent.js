@@ -1,0 +1,1 @@
+import './contentComponent.html';
