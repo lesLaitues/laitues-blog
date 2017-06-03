@@ -57,7 +57,7 @@ export const remove = new ValidatedMethod({
 	run({ tagId }) {
 		//remove the tag from all contents using it
 		Contents.find({
-			tags: { $elemMatch: tagId }
+			tags: tagId
 		}).foreach(content => {
 			Contents.removeTag(content._id, tagId);
 		});
