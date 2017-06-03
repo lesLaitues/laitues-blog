@@ -1,13 +1,19 @@
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 export const Tags = new Mongo.Collection('tags');
-tags.ensureIndex({ name: 1 }, { unique: true });
+//Tags.createIndex({ name: 1 }, { unique: true }); // TODO: check
 
 Tags.deny({
-	insert() { return true; },
-	update() { return true; },
-	remove() { return true; }
+	insert() {
+		return true;
+	},
+	update() {
+		return true;
+	},
+	remove() {
+		return true;
+	}
 });
 
 Tags.schema = new SimpleSchema({

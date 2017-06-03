@@ -30,3 +30,7 @@ shell-server@0.2.3
 
 # mobile
 mobile-experience@1.0.4
+aldeed:collection2-core
+accounts-password
+mdg:validated-method
+msavin:mongol

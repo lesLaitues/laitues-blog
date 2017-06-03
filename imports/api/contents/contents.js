@@ -1,12 +1,18 @@
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 export const Contents = new Mongo.Collection('contents');
 
 Contents.deny({
-	insert() { return true; },
-	update() { return true; },
-	remove() { return true; }
+	insert() {
+		return true;
+	},
+	update() {
+		return true;
+	},
+	remove() {
+		return true;
+	}
 });
 
 Contents.schema = new SimpleSchema({
@@ -37,22 +43,29 @@ Contents.schema = new SimpleSchema({
 		autoValue() {
 			if (this.isUpdate) {
 				return new Date();
+			} else {
+				this.unset();
 			}
-		},
-		denyInsert: true
+		}
 	},
 	authors: {
-		type: [String],
-		regEx: SimpleSchema.RegEx.Id,
+		type: Array,
 		optional: false
 	},
-	'data.text' : {
+	'authors.$': {
+		type: String,
+		regEx: SimpleSchema.RegEx.Id
+	},
+	'data.text': {
 		type: String
 	},
 	tags: {
-		type: [String],
-		regEx: SimpleSchema.RegEx.Id,
+		type: Array,
 		optional: false
+	},
+	'tags.$': {
+		type: String,
+		regEx: SimpleSchema.RegEx.Id
 	},
 	answering: {
 		type: String,
