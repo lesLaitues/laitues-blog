@@ -18,31 +18,31 @@ Meteor.methods({
 
 		Contents.insert(content);
 	},
-	'contents.rename'({ contentId, newTitle }) {
+	'contents.rename'({ contentId, title }) {
 		Contents.update(contentId, {
 			$set: {
-				title: newTitle
+				title
 			}
 		});
 	},
-	'contents.updateData'({ contentId, newData }) {
+	'contents.updateData'({ contentId, data }) {
 		Contents.update(contentId, {
 			$set: {
-				data: newData
+				data
 			}
 		});
 	},
-	'contents.addTag'({ contentId, newTag }) {
+	'contents.addTag'({ contentId, tagId }) {
 		Contents.update(contentId, {
 			$addToSet: {
-				tags: newTag
+				tags: tagId
 			}
 		});
 	},
-	'contents.removeTag'({ contentId, tag }) {
+	'contents.removeTag'({ contentId, tagId }) {
 		Contents.update(contentId, {
 			$pull: {
-				tags: tag
+				tags: tagId
 			}
 		});
 	},
