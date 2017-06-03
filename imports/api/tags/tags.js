@@ -27,7 +27,7 @@ Tags.schema = new SimpleSchema({
 		optional: false
 	},
 	description: {
-		type: String
+		type: String,
 		max: 250
 	}
 });
