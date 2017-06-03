@@ -3,6 +3,7 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 import { Contents } from './contents.js';
 
+// methods on one article
 export const insert = new ValidateMethod({
 	name: 'contents.insert',
 	validate: Contents.simpleSchema().pick(['title', 'authors', 'tags', 'text', 'answering']).validator({ clean: true, filter: false }),
