@@ -52,7 +52,7 @@ Contents.schema = new SimpleSchema({
 	tags: {
 		type: [String],
 		regEx: SimpleSchema.RegEx.Id,
-		optional: false;
+		optional: false
 	},
 	answering: {
 		type: String,
