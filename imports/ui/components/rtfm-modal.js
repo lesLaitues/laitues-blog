@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import './rtfm-modal.html'
 
 Template.rtfmModal.onCreated(() => {
-	this.s = new ReactiveVar(null);
+	this.state = new ReactiveVar(null);
 });
 
 Template.rtfmModal.onRendered(() => {
@@ -14,21 +14,22 @@ Template.rtfmModal.onRendered(() => {
 
 Template.rtfmModal.helpers({
 	isRegestering() {
-		return Template.instance().s.get() === 'register';
+		return Template.instance().state.get() === 'register';
 	},
 	isLoggingin() {
-		return Template.instance().s.get() === 'login';
+		return Template.instance().state.get() === 'login';
 	}
 });
 
 Template.rtfmModal.events({
 	'keypress #user': _.throttle((e, t) => {
+		console.log(t);
 		if (Meteor.users.findOne({username: e.target.value}) || Meteor.users.findOne({email: e.target.value})) {
-			t.s.set('register');
-			console.log(t.s.get());
+			this.state.set('register');
+			console.log(this.state.get());
 		} else {
-			t.s.set('login');
-			console.log(t.s.get());
+			this.state.set('login');
+			console.log(this.state.get());
 		}
 	}, 300)
 });
