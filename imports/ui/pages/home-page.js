@@ -1,14 +1,20 @@
 import { Template } from 'meteor/templating';
+import { Session } from 'meteor/session';
+
+import { Tags } from '../../api/tags/tags';
 import { Contents } from '../../api/contents/contents';
 
+import '../components/tag-component';
 import '../components/content-component';
 
 import './home-page.html';
 
 Template.homePage.onCreated(function () {
+	Session.set('allowedTags', []);
+	Session.set('disallowedTags', []);
 	this.autorun(() => {
-		this.subscribe('contents', [], ["aiueaie"], 10);
-		console.log('salut');
+		this.subscribe('contents', Session.get('allowedTags'), Session.get('disallowedTags'), 10);
+		this.subscribe('tags');
 	});
 });
 
@@ -22,9 +28,12 @@ Template.homePage.onRendered(() => {
 Template.homePage.helpers({
 	contents() {
 		return Contents.find({});
+	},
+	otherTags() {
+		return Tags.find({
+			_id: {
+				
+			}
+		});
 	}
-});
-
-Template.homePage.events({
-
 });

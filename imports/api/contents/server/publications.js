@@ -11,19 +11,23 @@ Meteor.publish('contents', (allowedTags, disallowedTags, n) => {
 				}
 			}
 		}, {
-			limit: n
+			limit: n,
+			sort: {
+				createdAt: -1
+			}
 		});
 	}
 	return Contents.find({
 		tags: {
-			$or: {
-				$all: allowedTags
-			},
+			$all: allowedTags,
 			$not: {
 				$in: disallowedTags
 			}
 		}
 	}, {
-		limit: n
+		limit: n,
+		sort: {
+			createdAt: -1
+		}
 	});
 });

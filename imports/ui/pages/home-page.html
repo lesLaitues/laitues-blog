@@ -29,10 +29,16 @@
 						</div>
 					</form>
 					<div class="col s12">
-						{{#each tags}}
-							<div class="chip">
-								{{name}}
-							</div>
+						{{#each otherTags}}
+							{{> tagComponent}}
+						{{/each}}
+						<hr>
+						{{#each allowedTags}}
+							{{> tagComponent}}
+						{{/each}}
+						<hr>
+						{{#each disallowedTags}}
+							{{> tagComponent}}
 						{{/each}}
 					</div>
 				</div>

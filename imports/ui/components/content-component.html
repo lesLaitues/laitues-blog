@@ -4,10 +4,8 @@
 			<span class="card-title">{{title}}</span>
 			<div class="tags">
 				{{#each tags}}
-					{{#with tag}}
-						<div class="chip">
-							{{name}}
-						</div>
+					{{#with tag this}}
+						{{> tagComponent}}
 					{{/with}}
 				{{/each}}
 			</div>
