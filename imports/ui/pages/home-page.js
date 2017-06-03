@@ -7,6 +7,7 @@ import { Contents } from '../../api/contents/contents';
 
 import '../components/tag-component';
 import '../components/content-component';
+import '../components/rtfm-modal';
 
 import './home-page.html';
 
