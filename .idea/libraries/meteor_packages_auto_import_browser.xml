@@ -151,6 +151,8 @@
         <item url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/isPlainObject.js" />
         <item url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/match.js" />
         <item url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/match_test.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha2/web.browser/dist/css/bootstrap.css" />
+        <item url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha2/web.browser/dist/js/bootstrap.js" />
         <item url="file://$USER_HOME$/.meteor/packages/webapp-hashing/1.0.9/web.browser/webapp-hashing.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ejson/1.0.13/web.browser/ejson.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ejson/1.0.13/web.browser/stringify.js" />
@@ -237,10 +239,8 @@
         <item url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime-client/0.4.3/web.browser/runtime.js" />
         <item url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/style/Mongol.css" />
         <item url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/lib/common.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha/web.browser/packages/twbs_bootstrap.js" />
         <item url="file://$USER_HOME$/.meteor/packages/mongo-id/1.0.6/web.browser/id.js" />
         <item url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/client/main.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha/web.browser/packages/twbs_bootstrap/dist/css/bootstrap.css" />
         <item url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/client/row_trash/main.js" />
         <item url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/client/_component/component.js" />
         <item url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/client/doc_editor/inline.js" />
@@ -445,6 +445,8 @@
       <root url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/isPlainObject.js" />
       <root url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/match.js" />
       <root url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/match_test.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha2/web.browser/dist/css/bootstrap.css" />
+      <root url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha2/web.browser/dist/js/bootstrap.js" />
       <root url="file://$USER_HOME$/.meteor/packages/webapp-hashing/1.0.9/web.browser/webapp-hashing.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ejson/1.0.13/web.browser/ejson.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ejson/1.0.13/web.browser/stringify.js" />
@@ -531,10 +533,8 @@
       <root url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime-client/0.4.3/web.browser/runtime.js" />
       <root url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/style/Mongol.css" />
       <root url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/lib/common.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha/web.browser/packages/twbs_bootstrap.js" />
       <root url="file://$USER_HOME$/.meteor/packages/mongo-id/1.0.6/web.browser/id.js" />
       <root url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/client/main.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha/web.browser/packages/twbs_bootstrap/dist/css/bootstrap.css" />
       <root url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/client/row_trash/main.js" />
       <root url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/client/_component/component.js" />
       <root url="file://$USER_HOME$/.meteor/packages/msavin_mongol/2.0.1/web.browser/client/doc_editor/inline.js" />
