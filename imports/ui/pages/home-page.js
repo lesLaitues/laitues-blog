@@ -21,10 +21,6 @@ Template.homePage.onCreated(function () {
 });
 
 Template.homePage.onRendered(() => {
-	const target = $('#right-sidebar').find('.pushpin');
-	target.pushpin({
-		top: target.offset().top
-	});
 });
 
 Template.homePage.helpers({
