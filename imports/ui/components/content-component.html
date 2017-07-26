@@ -1,20 +1,9 @@
 <template name="contentComponent">
-	<div class="card content">
-		<div class="card-content">
-			<span class="card-title">{{title}}</span>
-			<div class="tags">
-				{{#each tags}}
-					{{#with tag this}}
-						{{> tagComponent}}
-					{{/with}}
-				{{/each}}
-			</div>
-			<p>{{data.text}}</p>
-		</div>
-		<div class="card-action">
-			<a href="#">Répondre</a>
-			<i class="material-icons">thumb_up</i>
-			<i class="material-icons">expand_more</i>
+	<div class="card">
+		<div class="card-block">
+			<h4 class="card-title">{{title}}</h4>
+			<p class="card-text">{{data.text}}</p>
+			<a href="#" class="btn btn-primary">Lire la suite</a>
 		</div>
 	</div>
 </template>

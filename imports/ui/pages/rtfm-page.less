@@ -1,0 +1,30 @@
+@import '../stylesheets/variables';
+
+#rtfm-page {
+	height: 100vh;
+
+	> .row {
+		height: 100%;
+		margin: 0;
+	}
+
+	#rtfm-main, #rtfm-side {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#rtfm-main {
+		.dark();
+
+		#answer {
+			font-size: 80vh;
+		}
+	}
+
+	#rtfm-side {
+		.light();
+	}
+}

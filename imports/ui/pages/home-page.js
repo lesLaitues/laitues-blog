@@ -3,11 +3,10 @@ import { Session } from 'meteor/session';
 import { _ } from 'meteor/underscore';
 
 import { Tags } from '../../api/tags/tags';
-import { Contents } from '../../api/contents/contents';
+import { Articles } from '../../api/articles/articles';
 
 import '../components/tag-component';
 import '../components/content-component';
-import '../components/rtfm-modal';
 
 import './home-page.html';
 
@@ -25,7 +24,7 @@ Template.homePage.onRendered(() => {
 
 Template.homePage.helpers({
 	contents() {
-		return Contents.find({});
+		return Articles.find({});
 	},
 	otherTags() {
 		return Tags.find({

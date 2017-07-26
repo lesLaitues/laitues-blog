@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Tags } from './tags';
-import { Contents } from '../contents/contents';
+import { Articles } from '../articles/articles';
 
 Meteor.methods({
 	'tags.insert'({ name, color, description }) {
@@ -35,10 +35,10 @@ Meteor.methods({
 	},
 	'tags.remove'({ tagId }) {
 		//remove the tag from all contents using it
-		Contents.find({
+		Articles.find({
 			tags: tagId
-		}).foreach(content => {
-			Contents.removeTag(content._id, tagId);
+		}).foreach(article => {
+			Articles.removeTag(article._id, tagId);
 		});
 
 		Tags.remove(tagId);
