@@ -1,0 +1,7 @@
+<template name="adminLayout">
+	{{#if currentUser}}
+		{{> Template.dynamic template=content}}
+	{{else}}
+		{{> rtfmPage}}
+	{{/if}}
+</template>
