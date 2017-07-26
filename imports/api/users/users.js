@@ -28,7 +28,7 @@ Schema.UserProfile = new SimpleSchema({
 	},
 	gender: {
 		type: String,
-		allowedValues: ['Male', 'Female'],
+		allowedValues: ['Male', 'Female', 'NonBinary'],
 		optional: true
 	},
 	organization: {
