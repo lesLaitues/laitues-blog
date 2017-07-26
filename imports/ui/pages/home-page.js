@@ -6,7 +6,7 @@ import { Tags } from '../../api/tags/tags';
 import { Articles } from '../../api/articles/articles';
 
 import '../components/tag-component';
-import '../components/content-component';
+import '../components/article-component';
 
 import './home-page.html';
 
