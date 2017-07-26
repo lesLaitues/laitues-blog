@@ -1,9 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-export const Articles = new Mongo.Collection('articles');
+export const Comments = new Mongo.Collection('comments');
 
-Articles.deny({
+Comments.deny({
 	insert() {
 		return true;
 	},
@@ -15,15 +15,10 @@ Articles.deny({
 	}
 });
 
-Articles.schema = new SimpleSchema({
+Comments.schema = new SimpleSchema({
 	_id: {
 		type: String,
 		regEx: SimpleSchema.RegEx.Id,
-		optional: false
-	},
-	title: {
-		type: String,
-		max: 255,
 		optional: false
 	},
 	createdAt: {
@@ -50,13 +45,10 @@ Articles.schema = new SimpleSchema({
 		},
 		optional: true
 	},
-	authors: {
-		type: Array,
-		optional: false
-	},
-	'authors.$': {
+	author: {
 		type: String,
 		regEx: SimpleSchema.RegEx.Id
+		optional: false
 	},
 	data: {
 		type: Object,
@@ -65,27 +57,24 @@ Articles.schema = new SimpleSchema({
 	'data.text': {
 		type: String
 	},
-	tags: {
-		type: Array,
-		optional: false
-	},
-	'tags.$': {
-		type: String,
-		regEx: SimpleSchema.RegEx.Id
-	},
-	following: {
+	answering: {
 		type: String,
 		regEx: SimpleSchema.RegEx.Id,
 		optional: true
+	},
+	article: {
+		type: String,
+		regEx: SimpleSchema.RegEx.Id,
+		optional: false
 	},
 	inTrash: {
 		type: Boolean,
 		autoValue() {
 			return false;
 		},
-		optional: false
+		optional: true
 	}
 });
 
-Articles.attachSchema(Articles.schema);
+Comments.attachSchema(Comments.schema);
 

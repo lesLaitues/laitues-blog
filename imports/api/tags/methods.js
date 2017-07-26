@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { Tags } from './tags';
 import { Contents } from '../contents/contents';
+import { Tags } from './tags';
 
 Meteor.methods({
 	'tags.insert'({ name, color, description }) {

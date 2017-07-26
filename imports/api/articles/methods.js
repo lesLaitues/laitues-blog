@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Articles } from './articles';
+import { Tags } from '../tags/tags';
 
 // methods on one article
 Meteor.methods({
@@ -59,7 +60,11 @@ Meteor.methods({
 		});
 	},
 	'articles.remove'({ articleId }) {
-		Articles.remove(articleId);
+		Articles.update(articleId, {
+			$set: {
+				inTrash: true
+			}
+		});
 	}
 });
 
