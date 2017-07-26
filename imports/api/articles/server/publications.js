@@ -1,10 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 
-import { Contents } from '../contents';
+import { Articles } from '../articles';
 
-Meteor.publish('contents', (allowedTags, disallowedTags, n) => {
+Meteor.publish('articles', (allowedTags, disallowedTags, n) => {
 	if (allowedTags.length === 0) {
-		return Contents.find({
+		return Articles.find({
 			tags: {
 				$not: {
 					$in: disallowedTags
@@ -17,7 +17,7 @@ Meteor.publish('contents', (allowedTags, disallowedTags, n) => {
 			}
 		});
 	}
-	return Contents.find({
+	return Articles.find({
 		tags: {
 			$all: allowedTags,
 			$not: {

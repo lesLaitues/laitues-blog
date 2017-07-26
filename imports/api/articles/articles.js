@@ -1,9 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-export const Contents = new Mongo.Collection('contents');
+export const Articles = new Mongo.Collection('articles');
 
-Contents.deny({
+Articles.deny({
 	insert() {
 		return true;
 	},
@@ -15,7 +15,7 @@ Contents.deny({
 	}
 });
 
-Contents.schema = new SimpleSchema({
+Articles.schema = new SimpleSchema({
 	_id: {
 		type: String,
 		regEx: SimpleSchema.RegEx.Id,
@@ -23,7 +23,7 @@ Contents.schema = new SimpleSchema({
 	},
 	title: {
 		type: String,
-		max: 100,
+		max: 255,
 		optional: false
 	},
 	createdAt: {
@@ -73,12 +73,12 @@ Contents.schema = new SimpleSchema({
 		type: String,
 		regEx: SimpleSchema.RegEx.Id
 	},
-	answering: {
+	following: {
 		type: String,
 		regEx: SimpleSchema.RegEx.Id,
 		optional: true
 	}
 });
 
-Contents.attachSchema(Contents.schema);
+Articles.attachSchema(Articles.schema);
 
