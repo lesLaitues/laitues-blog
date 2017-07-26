@@ -1,0 +1,61 @@
+@import 'variables';
+
+.light {
+	.btn-primary {
+		color: @base1;
+		background-color: @base03;
+		border-color: @base03;
+	}
+
+	.btn-primary:hover {
+		color: @base1;
+		background-color: @base02;
+	}
+
+	.btn-primary:focus,
+	.btn-primary.focus {
+		color: @base1;
+		background-color: @base02;
+	}
+
+	.btn-primary:active,
+	.btn-primary.active,
+	.open > .btn-primary.dropdown-toggle {
+		color: @base1;
+		background-color: @base02;
+		background-image: none;
+	}
+
+	.btn-primary:active:hover,
+	.btn-primary:active:focus,
+	.btn-primary:active.focus,
+	.btn-primary.active:hover,
+	.btn-primary.active:focus,
+	.btn-primary.active.focus,
+	.open > .btn-primary.dropdown-toggle:hover,
+	.open > .btn-primary.dropdown-toggle:focus,
+	.open > .btn-primary.dropdown-toggle.focus {
+		color: @base1;
+		background-color: @base02;
+	}
+
+	.btn-primary.disabled:focus,
+	.btn-primary.disabled.focus,
+	.btn-primary:disabled:focus,
+	.btn-primary:disabled.focus {
+		background-color: #0275d8;
+	}
+
+	.btn-primary.disabled:hover,
+	.btn-primary:disabled:hover {
+		background-color: #0275d8;
+	}
+}
+
+input, .form-control {
+	border-radius: 0;
+}
+
+.btn {
+	border-radius: 0;
+}
