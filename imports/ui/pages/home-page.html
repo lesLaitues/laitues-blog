@@ -1,47 +1,26 @@
 <template name="homePage">
-	<div class="section green darken-1" id="index-banner">
-		<div class="container">
-			<h1 class="header center-on-small-only">Laitues</h1>
-			<h4 class="light green-text text-lighten-4 center-on-small-only">Le blog qui ne raconte pas que des salades.</h4>
-			<a class="btn-floating btn-large halfway-fab waves-effect waves-light teal horizontal" href="#rtfm-modal">
-				<i class="material-icons">lock</i>
-			</a>
+	<div class="col-md-8">
+		<div class="row">
+			{{# each contents}}
+				<div class="col-md-12">
+					{{> contentComponent}}
+				</div>
+			{{/each}}
 		</div>
 	</div>
-
-	<div class="row">
-		<div class="col s12 m9">
+	<div id="right-sidebar" class="col-md-4">
+		<div class="pushpin">
 			<div class="row">
-				{{# each contents}}
-					<div class="col s12">
-						{{> contentComponent}}
-					</div>
-				{{/each}}
-			</div>
-		</div>
-		<div id="right-sidebar" class="col s12 m3 hide-on-small-only">
-			<div class="pushpin">
-				<div class="row">
-					<form class="col s12">
-						<div class="row">
-							<div class="input-field col s12">
-								<i class="material-icons prefix">search</i>
-								<input id="icon_prefix" type="text" class="validate">
-								<label for="icon_prefix">Recherche</label>
-							</div>
-						</div>
-					</form>
-					<div class="col s12">
-						{{#each allowedTags}}
-							{{> tagComponent}}
-						{{/each}}
-						{{#each disallowedTags}}
-							{{> tagComponent}}
-						{{/each}}
-						{{#each otherTags}}
-							{{> tagComponent}}
-						{{/each}}
-					</div>
+				<div class="col-12">
+					{{#each allowedTags}}
+						{{> tagComponent}}
+					{{/each}}
+					{{#each disallowedTags}}
+						{{> tagComponent}}
+					{{/each}}
+					{{#each otherTags}}
+						{{> tagComponent}}
+					{{/each}}
 				</div>
 			</div>
 		</div>
