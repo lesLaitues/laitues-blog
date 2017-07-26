@@ -11,7 +11,6 @@ less@2.7.9
 
 # ui
 reactive-var@1.0.11
-materialize:materialize
 blaze-html-templates@1.0.4
 
 # data
@@ -35,3 +34,4 @@ accounts-password@1.4.0
 mdg:validated-method
 meteortoys:allthings
 session@1.1.7
+twbs:bootstrap@4.0.0-alpha
