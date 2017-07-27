@@ -1,7 +1,7 @@
 <template name="adminLayout">
 	<div id="admin-layout">
 		{{#if currentUser}}
-			<nav class="navbar navbar-toggleable-md navbar-inverse navbar-fixed-top bg-inverse">
+			<nav id="admin-navbar" class="navbar navbar-toggleable-md navbar-inverse navbar-fixed-top bg-inverse">
 				<button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -83,4 +83,6 @@
 			{{> rtfmPage}}
 		{{/if}}
 	</div>
+
+	{{> sAlert}}
 </template>

@@ -1,4 +1,5 @@
 import { Template } from 'meteor/templating';
+import { sAlert } from 'meteor/juliancwirko:s-alert';
 
 import './admin-home-page.html';
 
@@ -14,8 +15,11 @@ Template.adminHomePage.events({
 				text: $('#article-text').val()
 			}
 		}, (err, res) => {
-			console.error(err);
-			console.log(res);
+			if (err) {
+				sAlert.error(err.reason);
+				throw err;
+			}
+			sAlert.success('Votre article a bien été publié.');
 		});
 	}
 });

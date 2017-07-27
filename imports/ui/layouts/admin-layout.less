@@ -1,9 +1,18 @@
 @import '../stylesheets/variables';
 
 #admin-layout {
+	.light();
+
 	padding-top: 50px;
+	min-height: 100vh;
+
+	#admin-navbar {
+		.dark();
+	}
 
 	.sidebar {
+		.dark();
+
 		position: fixed;
 		top: 51px;
 		bottom: 0;
@@ -12,7 +21,6 @@
 		padding: 20px;
 		overflow-x: hidden;
 		overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-		border-right: 1px solid #eee;
 	}
 
 	/* Sidebar navigation */
@@ -35,5 +43,9 @@
 
 	.sidebar .nav-link {
 		border-radius: 0;
+	}
+
+	.sidebar .nav-link.active {
+		.light();
 	}
 }
