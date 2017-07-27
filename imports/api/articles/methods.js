@@ -16,7 +16,7 @@ Meteor.methods({
 		}
 
 		//check for following unicity
-		if (Articles.findOne({ following })) {
+		if (following && Articles.findOne({ following })) {
 			throw new Meteor.Error('FollowingAlreadyUsedError', 'Cannot follow this article');
 		}
 
@@ -67,4 +67,3 @@ Meteor.methods({
 		});
 	}
 });
-
