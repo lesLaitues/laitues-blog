@@ -23,7 +23,7 @@ Template.homePage.onRendered(() => {
 });
 
 Template.homePage.helpers({
-	contents() {
+	articles() {
 		return Articles.find({});
 	},
 	otherTags() {
