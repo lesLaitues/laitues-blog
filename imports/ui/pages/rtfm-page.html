@@ -14,12 +14,18 @@
 					<p class="lead">
 						Entrez un pseudo existant ou bien un nouveau pseudo (et ça fonctionne aussi avec l’email <strong>YAY \O/</strong>)
 					</p><br>
-					<div class="container-fluid">
-						<form>
+					<div id="rtfm-form-wrapper" class="container-fluid">
+						<form id="rtfm-form">
 							<div class="form-group row">
-								<input type="text" class="form-control form-control-lg" id="username-or-email" placeholder="Pseudo ou email">
+								{{#if isRegistering}}
+									<label for="username-or-email" class="col-sm-2 col-form-label">{{#if isEmail}}Email{{else}}Pseudonyme{{/if}}</label>
+								{{/if}}
+								<input type="{{inputType}}" class="form-control form-control-lg" id="username-or-email" placeholder="Pseudo ou email">
 							</div>
-							<button type="submit" {{isDisabled}} class="btn btn-primary btn-block btn-lg">{{btnText}}</button>
+							{{#if isRegistering}}
+
+							{{/if}}
+							<button type="submit" disabled="{{isDisabled}}" class="btn btn-primary btn-block btn-lg">{{btnText}}</button>
 						</form>
 					</div>
 				</div>

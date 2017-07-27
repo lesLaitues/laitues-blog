@@ -10,9 +10,6 @@ import '../../ui/pages/rtfm-page';
 
 FlowRouter.route('/', {
 	name: 'homePage',
-	subscriptions: function (params, queryParams) {
-		this.register('my', Meteor.subscribe('blogPost', params.postId));
-	},
 	action: function () {
 		BlazeLayout.render('mainLayout', { content: 'homePage' });
 	}
