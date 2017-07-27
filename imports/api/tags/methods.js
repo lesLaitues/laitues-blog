@@ -3,10 +3,9 @@ import { Tags } from './tags';
 import { Articles } from '../articles/articles';
 
 Meteor.methods({
-	'tags.insert'({ name, color, description }) {
+	'tags.insert'({ name, description }) {
 		const tag = {
 			name,
-			color,
 			description
 		};
 
@@ -16,13 +15,6 @@ Meteor.methods({
 		Tags.update(tagId, {
 			$set: {
 				name: newName
-			}
-		});
-	},
-	'tags.updateColor'({ tagId, newColor }) {
-		Tags.update(tagId, {
-			$set: {
-				color: newColor
 			}
 		});
 	},

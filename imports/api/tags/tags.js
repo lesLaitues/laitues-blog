@@ -25,10 +25,6 @@ Tags.schema = new SimpleSchema({
 		type: String,
 		max: 42,
 	},
-	color: {
-		type: String,
-		max: 42,
-	},
 	description: {
 		type: String,
 		max: 250
