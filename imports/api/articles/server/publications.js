@@ -31,3 +31,8 @@ Meteor.publish('articles', (allowedTags, disallowedTags, n) => {
 		}
 	});
 });
+
+Meteor.publish('article' (articleId) => {
+	return Articles.find({ _id: articleId });
+});
+
