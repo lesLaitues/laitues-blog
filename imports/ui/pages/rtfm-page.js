@@ -153,5 +153,18 @@ Template.rtfmPage.events({
 	},
 	'input #email,#username,#password,#password2'(event, instance) {
 		checkForm(instance);
+	},
+	'submit form'(event, instance) {
+		event.preventDefault();
+		if (checkForm(instance)) {
+			const isEmail = instance.isEmail.get();
+			Accounts.createUser({
+				username: isEmail ? $('#username').val() : $('#username-or-email').val(),
+				email: isEmail ? $('#username-or-email').val() : $('#email').val(),
+				password: $('#password').val()
+			}, err => {
+				console.error(err);
+			});
+		}
 	}
 });
