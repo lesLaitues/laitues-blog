@@ -7,6 +7,7 @@ import { Articles } from '../../api/articles/articles';
 
 import '../components/tag-component';
 import '../components/article-component';
+import '../components/intro-component';
 
 import './feed-page.html';
 
