@@ -47,7 +47,7 @@ Comments.schema = new SimpleSchema({
 	},
 	author: {
 		type: String,
-		regEx: SimpleSchema.RegEx.Id
+		regEx: SimpleSchema.RegEx.Id,
 		optional: false
 	},
 	data: {
