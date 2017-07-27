@@ -8,9 +8,9 @@ import { Articles } from '../../api/articles/articles';
 import '../components/tag-component';
 import '../components/article-component';
 
-import './home-page.html';
+import './feed-page.html';
 
-Template.homePage.onCreated(function () {
+Template.feedPage.onCreated(function () {
 	Session.set('allowedTags', []);
 	Session.set('disallowedTags', []);
 	this.autorun(() => {
@@ -19,10 +19,10 @@ Template.homePage.onCreated(function () {
 	});
 });
 
-Template.homePage.onRendered(() => {
+Template.feedPage.onRendered(() => {
 });
 
-Template.homePage.helpers({
+Template.feedPage.helpers({
 	articles() {
 		return Articles.find({});
 	},

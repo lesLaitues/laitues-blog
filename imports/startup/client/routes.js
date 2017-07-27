@@ -2,16 +2,23 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 import '../../ui/layouts/main-layout';
-import '../../ui/pages/home-page';
+import '../../ui/pages/feed-page';
 
 import '../../ui/layouts/admin-layout';
 import '../../ui/pages/admin-home-page';
 import '../../ui/pages/rtfm-page';
 
 FlowRouter.route('/', {
-	name: 'homePage',
-	action: function () {
-		BlazeLayout.render('mainLayout', { content: 'homePage' });
+	name: 'feedPage',
+	action() {
+		BlazeLayout.render('mainLayout', { content: 'feedPage' });
+	}
+});
+
+FlowRouter.route('/:articleId', {
+	name: 'articlePage',
+	action() {
+		BlazeLayout.render('mainLayout', {  content: 'articlePage'});
 	}
 });
 
@@ -24,7 +31,7 @@ let adminRoutes = FlowRouter.group({
 });
 
 adminRoutes.route('/', {
-	action: function () {
+	action() {
 		BlazeLayout.render('adminLayout', { content: 'adminHomePage' });
 	}
 });
