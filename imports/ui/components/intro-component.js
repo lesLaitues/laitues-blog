@@ -5,10 +5,7 @@ import { AsciiMorph } from '../lib/asciiMorph';
 import './intro-component.html';
 
 Template.introComponent.rendered = () => {
-
 	AsciiMorph(document.getElementById('morph-section'), { x: 51, y: 28 });
-
-
 
 	const asciis = [
 		[
