@@ -2,7 +2,7 @@
 	<div id="home-page">
 		<div class="row">
 			<div id="home-main" class="col-md-8">
-				<h1>Laitues — Saperlipopette</h1>
+				<h1>Laitues</h1>
 				{{# each articles}}
 					<div class="row">
 						<div class="col-md-12">
@@ -12,21 +12,26 @@
 				{{/each}}
 			</div>
 			<div id="home-side" class="col-md-4">
-				<div class="pushpin">
-					<div class="row">
-						<div class="col-12">
-							{{#each allowedTags}}
-								{{> tagComponent}}
-							{{/each}}
-							{{#each disallowedTags}}
-								{{> tagComponent}}
-							{{/each}}
-							{{#each otherTags}}
-								{{> tagComponent}}
-							{{/each}}
-						</div>
-					</div>
-				</div>
+				<h1>Laitues</h1>
+				<h2>Tags</h2>
+				{{#each allowedTags}}
+					{{> tagComponent}}
+				{{/each}}
+				{{#each disallowedTags}}
+					{{> tagComponent}}
+				{{/each}}
+				{{#each otherTags}}
+					{{> tagComponent}}
+				{{/each}}
+				<h2>Les laitues</h2>
+				<ul>
+					<li>Jirsad</li>
+					<li>Johyn Papin</li>
+				</ul>
+				<h2>L’heure</h2>
+				Il est actuellement…
+				<hr/>
+				<a href="/admin"><i class="fa fa-unlock-alt"></i>&nbsp;Administration</a>
 			</div>
 		</div>
 	</div>

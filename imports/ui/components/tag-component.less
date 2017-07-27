@@ -1,0 +1,26 @@
+@import '../stylesheets/variables';
+
+.tag {
+	display: inline-block;
+	padding: .25em .4em;
+	font-size: 75%;
+	line-height: 1;
+	color: @base3;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	cursor: pointer;
+}
+
+.tag.tag-default {
+	background-color: @blue;
+}
+
+.tag.tag-active {
+	background-color: @green;
+}
+
+.tag.tag-ban {
+	background-color: @red;
+}
+
