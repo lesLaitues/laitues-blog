@@ -1,7 +1,9 @@
 import { Template } from 'meteor/templating';
 
-import { AsciiMorph } from '../lib/asciiMorph.min';
+import { AsciiMorph } from '../lib/asciiMorph';
 
 import './intro-component.html';
 
-Template.
+Template.introComponent.onCreated(function introComponentCreated() {
+	console.log(AsciiMorph);
+});
