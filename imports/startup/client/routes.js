@@ -10,8 +10,15 @@ import '../../ui/pages/rtfm-page';
 
 FlowRouter.route('/', {
 	name: 'homePage',
-	action: function () {
+	action() {
 		BlazeLayout.render('mainLayout', { content: 'homePage' });
+	}
+});
+
+FlowRouter.route('/:articleId', {
+	name: 'articlePage',
+	action() {
+		BlazeLayout.render('mainLayout', {  content: 'articlePage'});
 	}
 });
 
@@ -24,7 +31,7 @@ let adminRoutes = FlowRouter.group({
 });
 
 adminRoutes.route('/', {
-	action: function () {
+	action() {
 		BlazeLayout.render('adminLayout', { content: 'adminHomePage' });
 	}
 });
