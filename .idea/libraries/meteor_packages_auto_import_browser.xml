@@ -184,6 +184,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/livedata_connection_tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/namespace.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/livedata_connection.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.7.0/web.browser/upstream/css/font-awesome.css" />
         <item url="file://$USER_HOME$/.meteor/packages/reload/1.1.11/web.browser/reload.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/id_map.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/stream_tests.js" />
@@ -478,6 +479,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/livedata_connection_tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/namespace.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/livedata_connection.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.7.0/web.browser/upstream/css/font-awesome.css" />
       <root url="file://$USER_HOME$/.meteor/packages/reload/1.1.11/web.browser/reload.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/id_map.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-client/2.0.0/web.browser/stream_tests.js" />
