@@ -6,7 +6,7 @@ import { Tags } from '../tags/tags';
 Meteor.methods({
 	'articles.insert'({ title, authors, tags, data, following }) {
 		//check foreign keys for authors
-		if ((authors.length < 1) || (Meteor.users.find({ _id: authors }).count() !== authors.length)) {
+		if ((authors.length < 1) || (Meteor.users.find({ _id: { $in: authors }}).count() !== authors.length)) {
 			throw new Meteor.Error('InvalidOrNoAuthorsError', 'Invalid or no authors given for this article');
 		}
 

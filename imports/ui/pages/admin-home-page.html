@@ -1,3 +1,13 @@
 <template name="adminHomePage">
-	<h1>Salut</h1>
+	<form>
+		<div class="form-group">
+			<label for="article-title">Titre de l’article</label>
+			<input type="text" class="form-control" id="article-title" placeholder="Titre de l’article">
+		</div>
+		<div class="form-group">
+			<label for="article-text">Contenu de l’article</label>
+			<textarea class="form-control" id="article-text" rows="3"></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary">Publier</button>
+	</form>
 </template>

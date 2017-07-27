@@ -14,7 +14,7 @@ Template.homePage.onCreated(function () {
 	Session.set('allowedTags', []);
 	Session.set('disallowedTags', []);
 	this.autorun(() => {
-		this.subscribe('contents', Session.get('allowedTags'), Session.get('disallowedTags'), 10);
+		this.subscribe('articles', Session.get('allowedTags'), Session.get('disallowedTags'), 10);
 		this.subscribe('tags');
 	});
 });
