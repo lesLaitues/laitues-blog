@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import { FlowRouter } from 'meteor/kadirahq:flow-router';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import '../components/tag-component';
 import './article-page.html';
