@@ -1,20 +1,22 @@
 <template name="tagComponent">
-	{{#if isAllowed _id}}
-		<div class="chip tag green">
-			<i class="material-icons">cancel</i>
-			&nbsp;{{name}}
-		</div>
-	{{else}}
-		{{#if isDisallowed _id}}
-			<div class="chip tag red">
-				<i class="material-icons">add_circle</i>
+	<div class="tag-component">
+		{{#if isAllowed _id}}
+			<div class="chip tag green">
+				<i class="material-icons">cancel</i>
 				&nbsp;{{name}}
 			</div>
 		{{else}}
-			<div class="chip tag">
-				<i class="material-icons">check_circle</i>
-				&nbsp;{{name}}
-			</div>
+			{{#if isDisallowed _id}}
+				<div class="chip tag red">
+					<i class="material-icons">add_circle</i>
+					&nbsp;{{name}}
+				</div>
+			{{else}}
+				<div class="chip tag">
+					<i class="material-icons">check_circle</i>
+					&nbsp;{{name}}
+				</div>
+			{{/if}}
 		{{/if}}
-	{{/if}}
+	</div>
 </template>
