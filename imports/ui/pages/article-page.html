@@ -1,0 +1,19 @@
+<template name="articlePage">
+	<div class="article-page">
+		<div class="row">
+			<div class="col-md-8" id="article-main">
+				<article>
+					<h3>{{title}}</h3>
+					<p>{{data.text}}</p>
+					{{#each topLevelComments _id}}
+						<!-- {{> comment}} -->
+					{{/each}}
+				</article>
+			</div>
+			<div class="col-md-3" id="article-side">
+				lol
+			</div>
+		</div>
+	</div>
+</template>
+
