@@ -7,6 +7,7 @@ import '../../ui/pages/feed-page';
 import '../../ui/layouts/admin-layout';
 import '../../ui/pages/admin-home-page';
 import '../../ui/pages/rtfm-page';
+import '../../ui/pages/article-page';
 
 FlowRouter.route('/', {
 	name: 'feedPage',
@@ -33,6 +34,6 @@ adminRoutes.route('/', {
 FlowRouter.route('/:articleId', {
 	name: 'articlePage',
 	action() {
-		BlazeLayout.render('mainLayout', {  content: 'articlePage'});
+		BlazeLayout.render('mainLayout', { content: 'articlePage' });
 	}
 });
