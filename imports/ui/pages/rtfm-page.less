@@ -10,6 +10,7 @@
 	}
 
 	#rtfm-main, #rtfm-side {
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -25,6 +26,8 @@
 
 	#rtfm-side {
 		.light();
+		max-height: 100%;
+		overflow-y: auto;
 	}
 
 	.hide {
