@@ -9,21 +9,39 @@
 				</marquee>
 			</div>
 			<div id="rtfm-side" class="col-md-4">
-				<div class="container-fluid">
+				<div id="rtfm-side-inner" class="container-fluid">
 					<h1 class="display-1">Accès privé</h1><br>
 					<p class="lead">
 						Entrez un pseudo existant ou bien un nouveau pseudo (et ça fonctionne aussi avec l’email <strong>YAY \O/</strong>)
 					</p><br>
-					<div id="rtfm-form-wrapper" class="container-fluid">
+					<div class="container-fluid">
 						<form id="rtfm-form">
-							<div class="form-group row">
-								{{#if isRegistering}}
-									<label for="username-or-email" class="col-sm-2 col-form-label">{{#if isEmail}}Email{{else}}Pseudonyme{{/if}}</label>
-								{{/if}}
-								<input type="{{inputType}}" class="form-control form-control-lg" id="username-or-email" placeholder="Pseudo ou email">
+							<div class="form-group">
+								<label for="username-or-email">{{#if isRegistering}}{{#if isEmail}}Email{{else}}Nom d’utilisateur{{/if}}{{else}}Nom d’utilisateur ou email{{/if}}</label>
+								<input type="{{inputType}}" class="form-control form-control-lg" id="username-or-email" placeholder="Nom d’utilisateur ou email">
 							</div>
 							{{#if isRegistering}}
-
+								<div id="register-part" class="hide">
+									{{#if isEmail}}
+										<div class="form-group">
+											<label for="username">Nom d’utilisateur</label>
+											<input type="text" class="form-control form-control-lg" id="username" placeholder="Nom d’utilisateur">
+										</div>
+									{{else}}
+										<div class="form-group">
+											<label for="email">Email</label>
+											<input type="email" class="form-control form-control-lg" id="email" placeholder="Email">
+										</div>
+									{{/if}}
+									<div class="form-group">
+										<label for="password">Mot de passe</label>
+										<input type="password" class="form-control form-control-lg" id="password" placeholder="Mot de passe">
+									</div>
+									<div class="form-group">
+										<label for="password2">Vérification du mot de passe</label>
+										<input type="password" class="form-control form-control-lg" id="password2" placeholder="Vérification du mot de passe">
+									</div>
+								</div>
 							{{/if}}
 							<button type="submit" disabled="{{isDisabled}}" class="btn btn-primary btn-block btn-lg">{{btnText}}</button>
 						</form>
