@@ -8,6 +8,12 @@ import { Tags } from '../../api/tags/tags';
 import { Comments } from '../../api/comments/comments';
 import { Articles } from '../../api/articles/articles';
 
+Template.articlePage.onCreated(function articlePageCreated() {
+	this.autorun(() => {
+		this.subscribe('article', FlowRouter.getParam('articleId'));
+	});
+});
+
 Template.articlePage.helpers({
 	article() {
 		return Articles.findOne(FlowRouter.getParam('articleId'));
@@ -21,11 +27,7 @@ Template.articlePage.helpers({
 	topLevelComments(articleId) {
 		return Comments.find({
 			article: FlowRouter.getParam('articleId'),
-			$not: {
-				$exists: {
-					following: 1
-				}
-			}
+			following: undefined
 		});
 	}
 });
