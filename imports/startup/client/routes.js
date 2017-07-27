@@ -15,13 +15,6 @@ FlowRouter.route('/', {
 	}
 });
 
-FlowRouter.route('/:articleId', {
-	name: 'articlePage',
-	action() {
-		BlazeLayout.render('mainLayout', {  content: 'articlePage'});
-	}
-});
-
 let adminRoutes = FlowRouter.group({
 	prefix: '/admin',
 	name: 'admin',
@@ -33,5 +26,13 @@ let adminRoutes = FlowRouter.group({
 adminRoutes.route('/', {
 	action() {
 		BlazeLayout.render('adminLayout', { content: 'adminHomePage' });
+	}
+});
+
+
+FlowRouter.route('/:articleId', {
+	name: 'articlePage',
+	action() {
+		BlazeLayout.render('mainLayout', {  content: 'articlePage'});
 	}
 });
