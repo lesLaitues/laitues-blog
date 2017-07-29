@@ -1,3 +1,4 @@
+/* solarized colors
 @base03: #002b36;
 @base02: #073642;
 @base01: #586e75;
@@ -6,6 +7,19 @@
 @base1: #93a1a1;
 @base2: #eee8d5;
 @base3: #fdf6e3;
+//*/
+
+//*/ alternate
+@base03: #1c140d;
+@base02: #444;
+@base01: #aaa;
+@base00: #000;
+@base0: #f2e9e1;
+@base1: #444;
+@base2: #dfd;
+@base3: #fff;
+//*/
+
 @yellow: #b58900;
 @orange: #cb4b16;
 @red: #dc322f;
@@ -13,15 +27,37 @@
 @violet: #6c71c4;
 @blue: #268bd2;
 @cyan: #2aa198;
-@green: #859900;
+@green: #437a41;
+
+.dark {
+	background-color: @base03;
+
+	.background-highlights {
+		background-color: @base02;
+	}
+
+	&, pre {
+		color: @base0;
+	}
+
+	b, strong {
+		color: @base1;
+	}
+
+	em {
+		color: @base01;
+	}
+
+	h1, h2 {
+		color: @green;
+	}
+
+	h3, h4, h5, h6 {
+		color: @base0;
+	}
+}
 
 .light {
-	@bg: @base3;
-	@bg2: @base2;
-	@fg: @base00;
-	@fg2: @base1;
-	@em: @base01;
-
 	background-color: @base3;
 
 	.background-highlights {
@@ -39,31 +75,13 @@
 	em {
 		color: @base1;
 	}
-}
 
-.dark {
-	@bg: @base03;
-	@bg2: @base02;
-	@fg: @base0;
-	@fg2: @base01;
-	@em: @base1;
-
-	background-color: @base03;
-
-	.background-highlights {
-		background-color: @base02;
+	h1, h2 {
+		color: @green;
 	}
-
-	&, pre {
-		color: @base0;
-	}
-
-	b, strong {
-		color: @base1;
-	}
-
-	em {
-		color: @base01;
+	
+	h3, h4, h5, h6 {
+		color: @base03;
 	}
 }
 
