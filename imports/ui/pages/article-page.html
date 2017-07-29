@@ -1,17 +1,17 @@
 <template name="articlePage">
-	<div id="article-page">
+	<div id="article-page" class="dark">
 		<div class="row">
-			<div class="col-md-9" id="article-main">
+			<div id="article-main" class="col-md-9 dark">
 				<article>
-					<h3>{{article.title}}</h3>
+					<h1>{{article.title}}</h1>
 					<p>{{article.data.text}}</p>
 					{{#each topLevelComments article._id}}
 						<!-- {{> comment}} -->
 					{{/each}}
 				</article>
 			</div>
-			<div class="col-md-3" id="article-side">
-				lol
+			<div id="article-side" class="col-md-3 light sticky">
+				<h2 class="sticky">Ceci est une sidebar.</h2>
 			</div>
 		</div>
 	</div>

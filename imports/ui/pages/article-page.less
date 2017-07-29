@@ -2,12 +2,12 @@
 @import '../stylesheets/main';
 
 #article-page {
-	#article-main {
-		.dark();
+	& > .row {
+		margin: 0;
 	}
 
-	#article-side {
-		.light();
+	#article-main, #article-side {
+		min-height: 100vh;
 	}
 }
 
