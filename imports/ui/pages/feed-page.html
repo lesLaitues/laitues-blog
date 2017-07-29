@@ -12,27 +12,29 @@
 					</div>
 				{{/each}}
 			</div>
-			<div id="feed-side" class="col-md-3 sticky">
-				<h1>Laitues</h1>
-				<h2>Tags</h2>
-				{{#each allowedTags}}
-					{{> tagComponent}}
-				{{/each}}
-				{{#each disallowedTags}}
-					{{> tagComponent}}
-				{{/each}}
-				{{#each otherTags}}
-					{{> tagComponent}}
-				{{/each}}
-				<h2>Les laitues</h2>
-				<ul>
-					<li>Jirsad</li>
-					<li>Johyn Papin</li>
-				</ul>
-				<h2>L’heure</h2>
-				Il est actuellement…
-				<hr/>
-				<a href="/admin"><i class="fa fa-unlock-alt"></i>&nbsp;Administration</a>
+			<div id="feed-side" class="col-md-3">
+				<div class="sticky">
+					<h1>Laitues</h1>
+					<h2>Tags</h2>
+					{{#each allowedTags}}
+						{{> tagComponent}}
+					{{/each}}
+					{{#each disallowedTags}}
+						{{> tagComponent}}
+					{{/each}}
+					{{#each otherTags}}
+						{{> tagComponent}}
+					{{/each}}
+					<h2>Les laitues</h2>
+					<ul>
+						<li>Jirsad</li>
+						<li>Johyn Papin</li>
+					</ul>
+					<h2>L’heure</h2>
+					Il est actuellement…
+					<hr/>
+					<a href="/admin"><i class="fa fa-unlock-alt"></i>&nbsp;Administration</a>
+				</div>
 			</div>
 		</div>
 	</div>
