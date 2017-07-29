@@ -5,7 +5,7 @@ import { AsciiMorph } from '../lib/asciiMorph';
 import './intro-component.html';
 
 Template.introComponent.rendered = () => {
-	AsciiMorph(document.getElementById('morph-section'), { x: 51, y: 28 });
+	AsciiMorph(document.getElementById('morph-section'), { x: 51, y: 15 });
 
 	const asciis = [
 		[
@@ -37,8 +37,7 @@ Template.introComponent.rendered = () => {
 			"  / / / ____    / / /_____/ /\\ \\       / / /    / / /      / / /   / / // /\\____\\/  _    \\ \\ \\     ",
 			" / /_/_/ ___/\\ / /_________/\\ \\ \\  ___/ / /__  / / /      / / /___/ / // / /______ /_/\\__/ / /     ",
 			"/_______/\\__\\// / /_       __\\ \\_\\/\\__\\/_/___\\/_/ /      / / /____\\/ // / /_______\\\\ \\/___/ /      ",
-			"\\_______\\/    \\_\\___\\     /____/_/\\/_________/\\_\\/       \\/_________/ \\/__________/ \\_____\\/       ",
-			"                                                                                                   "
+			"\\_______\\/    \\_\\___\\     /____/_/\\/_________/\\_\\/       \\/_________/ \\/__________/ \\_____\\/       "
 		],
 
 		[
@@ -61,5 +60,5 @@ Template.introComponent.rendered = () => {
 		AsciiMorph.morph(asciis[currentIndex]);
 		currentIndex++;
 		currentIndex %= asciis.length;
-	}, 3000);
+	}, 6000);
 };
