@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session';
 import { _ } from 'meteor/underscore';
+import Stickyfill from 'stickyfill';
 
 import { Tags } from '../../api/tags/tags';
 import { Articles } from '../../api/articles/articles';
@@ -21,6 +22,15 @@ Template.feedPage.onCreated(function () {
 });
 
 Template.feedPage.onRendered(() => {
+	let stickyfill = Stickyfill();
+	for (elt of document.getElementsByClassName('sticky')) {
+		console.log(stickyfill);
+		console.log(elt);
+		stickyfill.add(elt);
+		stickyfill.init();
+		console.log(stickyfill);
+	}
+	console.log(stickyfill.stickies);
 });
 
 Template.feedPage.helpers({
@@ -51,3 +61,4 @@ Template.feedPage.helpers({
 		});
 	}
 });
+

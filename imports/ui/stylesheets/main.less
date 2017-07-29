@@ -95,3 +95,14 @@ a:hover {
 	z-index: 424242;
 }
 
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	bottom: 0;
+
+	::before, ::after {
+		content: '';
+		display: table;
+	}
+}
+
