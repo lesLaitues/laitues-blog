@@ -1,20 +1,16 @@
 <template name="feedPage">
 	{{> introComponent}}
-	<div id="feed-page">
+	<div id="feed-page" class="dark">
 		<div class="row">
-			<div id="feed-main" class="col-md-9">
+			<div id="feed-main" class="col-md-9 dark">
 				<h1>Laitues</h1>
 				{{# each articles}}
-					<div class="row">
-						<div class="col-md-12">
-							{{> articleComponent}}
-						</div>
-					</div>
+					{{> articleComponent}}
 				{{/each}}
 			</div>
-			<div id="feed-side" class="col-md-3">
-				<div class="sticky">
-					<h1>Laitues</h1>
+			<div id="feed-side" class="col-md-3 light sticky">
+				<h1 class="sticky light">Laitues</h1>
+				<div class="sticky light">
 					<h2>Tags</h2>
 					{{#each allowedTags}}
 						{{> tagComponent}}
@@ -25,6 +21,8 @@
 					{{#each otherTags}}
 						{{> tagComponent}}
 					{{/each}}
+				</div>
+				<div class="sticky light">
 					<h2>Les laitues</h2>
 					<ul>
 						<li>Jirsad</li>
