@@ -2,7 +2,6 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 export const Tags = new Mongo.Collection('tags');
-//Tags.createIndex({ name: 1 }, { unique: true }); // TODO: check
 
 Tags.deny({
 	insert() {
@@ -32,5 +31,4 @@ Tags.schema = new SimpleSchema({
 });
 
 Tags.attachSchema(Tags.schema);
-
 

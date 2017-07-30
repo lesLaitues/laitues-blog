@@ -12,10 +12,10 @@
 				<h1 class="sticky light">Laitues</h1>
 				<div class="sticky light">
 					<h2>Tags</h2>
-					{{#each allowedTags}}
+					{{#each requiredTags}}
 						{{> tagComponent}}
 					{{/each}}
-					{{#each disallowedTags}}
+					{{#each bannedTags}}
 						{{> tagComponent}}
 					{{/each}}
 					{{#each otherTags}}

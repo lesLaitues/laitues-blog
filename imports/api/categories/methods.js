@@ -26,13 +26,14 @@ Meteor.methods({
 		});
 	},
 	'categories.remove'({ categoryId }) {
-		//TODO: move all articles under this category to ‘hidden’ category
+		//remove every article under this category
 		Articles.find({
 			category: categoryId
 		}).foreach(article => {
 			Articles.remove(article._id);
 		});
 
+		//remove category
 		Categories.remove(categoryId);
 	}
 });

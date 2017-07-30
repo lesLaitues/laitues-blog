@@ -2,34 +2,30 @@ import { Meteor } from 'meteor/meteor';
 
 import { Articles } from '../articles';
 
-Meteor.publish('articles', (allowedTags, disallowedTags, n) => {
-	if (allowedTags.length === 0) {
-		return Articles.find({
-			tags: {
-				$not: {
-					$in: disallowedTags
-				}
-			}
-		}, {
-			limit: n,
-			sort: {
-				createdAt: -1
-			}
-		});
-	}
-	return Articles.find({
+Meteor.publish('articles', (category, requiredTags, bannedTags, n) => {
+	let filters = {
 		tags: {
-			$all: allowedTags,
 			$not: {
-				$in: disallowedTags
+				$in: bannedTags
 			}
 		}
-	}, {
+	};
+	let conditions = {
 		limit: n,
 		sort: {
 			createdAt: -1
 		}
-	});
+	};
+
+	if (!!category) {
+		filters.category = category;
+	}
+
+	if (requiredTags.length > 0) {
+		filters.tags.$all = requiredTags;
+	}
+	
+	return Articles.find(filters, conditions);
 });
 
 Meteor.publish('article', (articleId) => {

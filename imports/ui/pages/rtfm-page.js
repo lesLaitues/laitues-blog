@@ -6,6 +6,7 @@ import { $ } from 'meteor/jquery';
 import './rtfm-page.html';
 
 Template.rtfmPage.onCreated(function rtfmPageOnCreated() {
+	//reactive vars for form fields
 	this.answer = new ReactiveVar(0);
 	this.registering = new ReactiveVar(false);
 	this.isEmail = new ReactiveVar(false);
@@ -70,6 +71,7 @@ const updateForm = _.debounce((event, instance) => {
 	}
 }, 250);
 
+//classes setters for success/warning/danger on form field
 function setSuccess(target) {
 	target = target.parent('.form-group');
 	target.removeClass('has-warning has-danger');
@@ -85,6 +87,7 @@ function setDanger(target) {
 	}
 }
 
+//check everything in the form is correctly filled
 function checkForm(instance) {
 	let valid = true;
 	const uoe = $('#username-or-email');
@@ -168,3 +171,4 @@ Template.rtfmPage.events({
 		}
 	}
 });
+

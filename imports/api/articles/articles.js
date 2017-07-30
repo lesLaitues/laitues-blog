@@ -65,6 +65,11 @@ Articles.schema = new SimpleSchema({
 	'data.text': {
 		type: String
 	},
+	category: {
+		type: String,
+		regEx: SimpleSchema.RegEx.Id,
+		optional: false
+	},
 	tags: {
 		type: Array,
 		optional: false

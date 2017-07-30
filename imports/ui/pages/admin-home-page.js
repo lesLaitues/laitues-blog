@@ -23,3 +23,4 @@ Template.adminHomePage.events({
 		});
 	}
 });
+

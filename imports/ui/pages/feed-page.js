@@ -3,6 +3,7 @@ import { Session } from 'meteor/session';
 import { _ } from 'meteor/underscore';
 import Stickyfill from 'stickyfill';
 
+import { Categories } from '../../api/categories/categories';
 import { Tags } from '../../api/tags/tags';
 import { Articles } from '../../api/articles/articles';
 
@@ -13,10 +14,11 @@ import '../components/intro-component';
 import './feed-page.html';
 
 Template.feedPage.onCreated(function () {
-	Session.set('allowedTags', []);
-	Session.set('disallowedTags', []);
+	Session.set('category', undefined);
+	Session.set('requiredTags', []);
+	Session.set('bannedTags', []);
 	this.autorun(() => {
-		this.subscribe('articles', Session.get('allowedTags'), Session.get('disallowedTags'), 10);
+		this.subscribe('articles', Session.get('category'), Session.get('requiredTags'), Session.get('bannedTags'), 10);
 		this.subscribe('tags');
 	});
 });
@@ -24,13 +26,9 @@ Template.feedPage.onCreated(function () {
 Template.feedPage.onRendered(() => {
 	let stickyfill = Stickyfill();
 	for (elt of document.getElementsByClassName('sticky')) {
-		console.log(stickyfill);
-		console.log(elt);
 		stickyfill.add(elt);
 		stickyfill.init();
-		console.log(stickyfill);
 	}
-	console.log(stickyfill.stickies);
 });
 
 Template.feedPage.helpers({
@@ -41,22 +39,22 @@ Template.feedPage.helpers({
 		return Tags.find({
 			_id: {
 				$not: {
-					$in: _.union(Session.get('disallowedTags'), Session.get('allowedTags'))
+					$in: _.union(Session.get('bannedTags'), Session.get('requiredTags'))
 				}
 			}
 		});
 	},
-	allowedTags() {
+	requiredTags() {
 		return Tags.find({
 			_id: {
-				$in: Session.get('allowedTags')
+				$in: Session.get('requiredTags')
 			}
 		});
 	},
-	disallowedTags() {
+	bannedTags() {
 		return Tags.find({
 			_id: {
-				$in: Session.get('disallowedTags')
+				$in: Session.get('bannedTags')
 			}
 		});
 	}

@@ -1,14 +1,14 @@
 <template name="tagComponent">
 	<span class="tag-component">
-		{{#if isAllowed _id}}
+		{{#if isRequired _id}}
 			<div class="tag tag-active">
-				<i class="fa fa-plus-circle"></i>
+				<i class="fa fa-ban"></i>
 				&nbsp;{{name}}
 			</div>
 		{{else}}
-			{{#if isDisallowed _id}}
+			{{#if isBanned _id}}
 				<div class="tag tag-ban">
-					<i class="fa fa-ban"></i>
+					<i class="fa fa-plus-circle"></i>
 					&nbsp;{{name}}
 				</div>
 			{{else}}

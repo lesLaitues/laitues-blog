@@ -5,26 +5,26 @@ import { _ } from 'meteor/underscore';
 import './tag-component.html';
 
 Template.tagComponent.helpers({
-	isAllowed(tagId) {
-		return Session.get('allowedTags').includes(tagId);
+	isRequired(tagId) {
+		return Session.get('requiredTags').includes(tagId);
 	},
-	isDisallowed(tagId) {
-		return Session.get('disallowedTags').includes(tagId);
+	isBanned(tagId) {
+		return Session.get('bannedTags').includes(tagId);
 	}
 });
 
 Template.tagComponent.events({
 	'click .tag'() {
-		let allowedTags = Session.get('allowedTags');
-		let disallowedTags = Session.get('disallowedTags');
+		let requiredTags = Session.get('requiredTags');
+		let bannedTags = Session.get('bannedTags');
 		const tagId = this._id;
-		if (allowedTags.includes(tagId)) {
-			Session.set('allowedTags', _.without(allowedTags, tagId));
-			Session.set('disallowedTags', _.union(disallowedTags, [tagId]));
-		} else if (disallowedTags.includes(tagId)) {
-			Session.set('disallowedTags', _.without(disallowedTags, tagId));
+		if (requiredTags.includes(tagId)) {
+			Session.set('requiredTags', _.without(requiredTags, tagId));
+			Session.set('bannedTags', _.union(bannedTags, [tagId]));
+		} else if (bannedTags.includes(tagId)) {
+			Session.set('bannedTags', _.without(bannedTags, tagId));
 		} else {
-			Session.set('allowedTags', _.union(allowedTags, [tagId]));
+			Session.set('requiredTags', _.union(requiredTags, [tagId]));
 		}
 	}
 });
