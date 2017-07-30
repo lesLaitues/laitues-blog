@@ -2,32 +2,21 @@
 @import '../stylesheets/main';
 
 #rtfm-page {
-	height: 100vh;
-
-	> .row {
-		height: 100%;
+	& > .row {
 		margin: 0;
 	}
 
 	#rtfm-main, #rtfm-side {
-		height: 100%;
+		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
 	#rtfm-main {
-		.dark();
-
 		#answer {
 			font-size: 80vh;
 		}
-	}
-
-	#rtfm-side {
-		.light();
-		max-height: 100%;
-		overflow-y: auto;
 	}
 
 	.hide {
@@ -40,8 +29,5 @@
 		left: 0;
 		font-size: 1.5em;
 	}
-
-	#back a {
-		color: @base00;
-	}
 }
+

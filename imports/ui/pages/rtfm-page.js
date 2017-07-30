@@ -49,25 +49,36 @@ const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
 
 const updateForm = _.debounce((event, instance) => {
 	const uoe = $('#username-or-email').val();
+	instance.isEmail.set(emailRegex.test(uoe));
 	if (uoe.length === 0) {
-		instance.btnText.set('Veuillez remplir le champs ci-dessus');
+		instance.btnText.set('Veuillez remplir les champs ci-dessus');
 	} else {
-		if (Meteor.users.findOne({ $or: [{ username: uoe }, { 'email.address': uoe }] })) {
-			instance.btnText.set('Connexion');
-			instance.registering.set(false);
-			instance.loggingin.set(true);
-			Meteor.setTimeout(() => {
-				$('#login-part').slideDown();
-			}, 100);
-		} else {
-			instance.btnText.set('Inscription');
-			instance.loggingin.set(false);
-			instance.registering.set(true);
-			Meteor.setTimeout(() => {
-				$('#register-part').slideDown();
-			}, 100);
-		}
-		instance.isEmail.set(emailRegex.test(uoe));
+		let username = instance.isEmail.get() ? $('#username').val() : $('#username-or-email').val();
+		let email = instance.isEmail.get() ? $('#username-or-email').val() : $('#email').val();
+		Meteor.call('users.exists', { username, email }, (err, res) => {
+			if (err) {
+				sAlert.error(err.reason);
+				return;
+			}
+
+			if (res) {
+				//exists, login
+				instance.btnText.set('Connexion');
+				instance.registering.set(false);
+				instance.loggingin.set(true);
+				Meteor.setTimeout(() => {
+					$('#login-part').slideDown();
+				}, 100);
+			} else {
+				//do not exists, register
+				instance.btnText.set('Inscription');
+				instance.loggingin.set(false);
+				instance.registering.set(true);
+				Meteor.setTimeout(() => {
+					$('#register-part').slideDown();
+				}, 100);
+			}
+		});
 	}
 }, 250);
 
@@ -159,15 +170,35 @@ Template.rtfmPage.events({
 	},
 	'submit form'(event, instance) {
 		event.preventDefault();
+
 		if (checkForm(instance)) {
+			if (Meteor.user()) {
+				Meteor.logout();
+			}
+
 			const isEmail = instance.isEmail.get();
-			Accounts.createUser({
-				username: isEmail ? $('#username').val() : $('#username-or-email').val(),
-				email: isEmail ? $('#username-or-email').val() : $('#email').val(),
-				password: $('#password').val()
-			}, err => {
-				console.error(err);
-			});
+
+			if (instance.registering.get()) {
+				Accounts.createUser({
+					username: isEmail ? $('#username').val() : $('#username-or-email').val(),
+					email: isEmail ? $('#username-or-email').val() : $('#email').val(),
+					password: $('#password').val()
+				}, (err) => {
+					if (err) {
+						sAlert.error('Désolé, une erreur est survenue.');
+						console.error(err);
+					}
+				});
+			} else if (instance.loggingin.get()){
+				Meteor.loginWithPassword($('#username-or-email').val(), $('#password').val(), (err) => {
+					if (err) {
+						sAlert.error('Désolé, une erreur est survenue.');
+						console.log(err);
+					} else {
+						sAlert.success('Salut ' + Meteor.user().username);
+					}
+				});
+			}
 		}
 	}
 });

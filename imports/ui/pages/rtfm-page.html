@@ -1,7 +1,7 @@
 <template name="rtfmPage">
-	<div id="rtfm-page">
+	<div id="rtfm-page" class="dark">
 		<div class="row">
-			<div id="rtfm-main" class="col-md-8">
+			<div id="rtfm-main" class="col-md-8 dark">
 				<div id="back"><a href="/"><i class="fa fa-chevron-left"></i></a></div>
 				<marquee direction="down" width="100%" height="100%" behavior="alternate">
 					<marquee behavior="alternate">
@@ -9,7 +9,7 @@
 					</marquee>
 				</marquee>
 			</div>
-			<div id="rtfm-side" class="col-md-4">
+			<div id="rtfm-side" class="col-md-4 light sticky">
 				<div id="rtfm-side-inner" class="container-fluid">
 					<h1 class="display-1">Accès privé</h1><br>
 					<p class="lead">
@@ -43,6 +43,15 @@
 										<input type="password" class="form-control form-control-lg" id="password2" placeholder="Vérification du mot de passe">
 									</div>
 								</div>
+							{{else}}
+								{{#if isLoggingin}}
+									<div id="login-part" class="hide">
+										<div class="form-group">
+											<label for="password">Mot de passe</label>
+											<input type="password" class="form-control form-control-lg" id="password" placeholder="Mot de passe">
+										</div>
+									</div>
+								{{/if}}
 							{{/if}}
 							<button type="submit" disabled="{{isDisabled}}" class="btn btn-primary btn-block btn-lg">{{btnText}}</button>
 						</form>

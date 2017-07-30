@@ -1,5 +1,10 @@
-import '../../api/users/users.js';
-import '../../api/tags/methods.js';
-import '../../api/tags/server/publications';
 import '../../api/articles/methods.js';
 import '../../api/articles/server/publications';
+import '../../api/categories/methods.js';
+import '../../api/categories/server/publications';
+import '../../api/comments/methods.js';
+import '../../api/comments/server/publications';
+import '../../api/tags/methods.js';
+import '../../api/tags/server/publications';
+import '../../api/users/users.js';
+import '../../api/users/methods.js';
