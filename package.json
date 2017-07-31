@@ -1,14 +1,26 @@
 {
-  "name": "laitues-blog",
-  "private": true,
-  "scripts": {
-    "start": "meteor run"
-  },
-  "dependencies": {
-    "babel-runtime": "^6.20.0",
-    "bcrypt": "^1.0.2",
-    "meteor-node-stubs": "~0.2.4",
-    "simpl-schema": "^0.3.0",
-    "stickyfill": "^1.1.1"
-  }
+	"name": "laitues-blog",
+	"private": true,
+	"scripts": {
+		"start": "meteor run"
+	},
+	"devDependencies": {
+		"autoprefixer": "^6.3.1"
+	},
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {
+				"browsers": [
+					"last 2 versions"
+				]
+			}
+		}
+	},
+	"dependencies": {
+		"babel-runtime": "^6.20.0",
+		"bcrypt": "^1.0.2",
+		"meteor-node-stubs": "~0.2.4",
+		"simpl-schema": "^0.3.0",
+		"stickyfill": "^1.1.1"
+	}
 }

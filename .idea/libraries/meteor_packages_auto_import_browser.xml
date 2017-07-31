@@ -156,8 +156,6 @@
         <item url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/isPlainObject.js" />
         <item url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/match.js" />
         <item url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/match_test.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha2/web.browser/dist/css/bootstrap.css" />
-        <item url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha2/web.browser/dist/js/bootstrap.js" />
         <item url="file://$USER_HOME$/.meteor/packages/webapp-hashing/1.0.9/web.browser/webapp-hashing.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ejson/1.0.13/web.browser/ejson.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ejson/1.0.13/web.browser/stringify.js" />
@@ -456,8 +454,6 @@
       <root url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/isPlainObject.js" />
       <root url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/match.js" />
       <root url="file://$USER_HOME$/.meteor/packages/check/1.2.5/web.browser/match_test.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha2/web.browser/dist/css/bootstrap.css" />
-      <root url="file://$USER_HOME$/.meteor/packages/twbs_bootstrap/4.0.0-alpha2/web.browser/dist/js/bootstrap.js" />
       <root url="file://$USER_HOME$/.meteor/packages/webapp-hashing/1.0.9/web.browser/webapp-hashing.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ejson/1.0.13/web.browser/ejson.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ejson/1.0.13/web.browser/stringify.js" />

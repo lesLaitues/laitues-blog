@@ -1,16 +1,17 @@
 <template name="articleComponent">
-	<div class="article-component">
-		<div class="card dark sticky">
-			<h2 class="card-header dark">{{title}}</h2>
-			<div class="card-block dark">
-				<p class="card-text">{{data.text}}</p>
-			</div>
-			<div class="card-footer dark">
-				<a href="/{{ _id }}" class="btn btn-primary"><i class="fa fa-comments"></i>&nbsp;{{commentsCount _id}} commentaire(s)</a>
+	<div id="article-component" class="ui card">
+		<div class="content">
+			<div class="header">{{title}}</div>
+			<div class="meta">
+				<span>2 days ago</span>
 				{{#each tags}}
 					{{> tag}}
 				{{/each}}
 			</div>
+			<div class="description">
+				<p>{{data.text}}</p>
+			</div>
 		</div>
+		<div class="extra content"><i class="comments icon"></i> {{commentsCount _id}} commentaire(s)</div>
 	</div>
 </template>

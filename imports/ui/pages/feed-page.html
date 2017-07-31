@@ -1,37 +1,43 @@
 <template name="feedPage">
 	{{> introComponent}}
-	<div id="feed-page" class="dark">
-		<div class="row">
-			<div id="feed-main" class="col-md-9 dark">
-				<h1>Laitues</h1>
-				{{# each articles}}
-					{{> articleComponent}}
-				{{/each}}
-			</div>
-			<div id="feed-side" class="col-md-3 light sticky">
-				<h1 class="sticky light">Laitues</h1>
-				<div class="sticky light">
-					<h2>Tags</h2>
-					{{#each requiredTags}}
-						{{> tagComponent}}
-					{{/each}}
-					{{#each bannedTags}}
-						{{> tagComponent}}
-					{{/each}}
-					{{#each otherTags}}
-						{{> tagComponent}}
-					{{/each}}
+	<div id="feed-page">
+		<div class="ui fluid container">
+			<div class="ui grid">
+				<div id="feed-main" class="ten wide column">
+					<div class="ui container">
+						<h1>Laitues</h1>
+						<div class="ui stackable two cards">
+							{{# each articles}}
+								{{> articleComponent}}
+							{{/each}}
+						</div>
+					</div>
 				</div>
-				<div class="sticky light">
-					<h2>Les laitues</h2>
-					<ul>
-						<li>Jirsad</li>
-						<li>Johyn Papin</li>
-					</ul>
-					<h2>L’heure</h2>
-					Il est actuellement…
-					<hr/>
-					<a href="/admin"><i class="fa fa-unlock-alt"></i>&nbsp;Administration</a>
+				<div id="feed-side" class="six wide column sticky">
+					<h1 class="sticky">Laitues</h1>
+					<div class="sticky">
+						<h2>Tags</h2>
+						{{#each requiredTags}}
+							{{> tagComponent}}
+						{{/each}}
+						{{#each bannedTags}}
+							{{> tagComponent}}
+						{{/each}}
+						{{#each otherTags}}
+							{{> tagComponent}}
+						{{/each}}
+					</div>
+					<div class="sticky">
+						<h2>Les laitues</h2>
+						<ul>
+							<li>Jirsad</li>
+							<li>Johyn Papin</li>
+						</ul>
+						<h2>L’heure</h2>
+						Il est actuellement…
+						<hr/>
+						<a href="/admin"><i class="fa fa-unlock-alt"></i>&nbsp;Administration</a>
+					</div>
 				</div>
 			</div>
 		</div>
